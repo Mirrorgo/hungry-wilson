@@ -14,13 +14,16 @@
   - 游戏源码
 - 文档
   - https://www.zhihu.com/column/c_1298055007057526784
+- 视频
+  - b站 "半与半岛" 饥荒代码
 
 
 ## 源码阅读笔记
 - 食材的数据
   - prefabs/veggies
   - prefabs/meats
-
+- 为什么meats,egg等和preparedfoods平级而不是单独开一个ingredients
+  - 可能是为了扩展性,各种场景可能产生错综复杂的关系,因此这些关系不通过文件夹结构来规范,而是未来通过独立的文件
 ## 源码的疑问
 ### 不影响开发
 ### 影响开发
