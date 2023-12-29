@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
 // Name,Health,Hunger,Sanity,Priority,Icon_Path,FoodType
-enum FoodType {
-  MEAT = "MEAT",
-  VEGGIE = "VEGGIE",
-}
+// enum FoodType {
+//   GENERIC = "GENERIC", // 默认值
+//   MEAT = "MEAT",
+//   VEGGIE = "VEGGIE",
+// }
+type FoodType = "MEAT" | "VEGGIE" | "GENERIC";
 
 // Enum for Healing values
 enum HealingValue {
@@ -33,7 +35,7 @@ const calories_per_day = 75;
 
 // Enum for Calorie values
 // 下面这部分奇怪的注释来自源代码
-enum CalorieValue {
+enum HungerValue {
   TINY = calories_per_day / 8, // berries
   SMALL = calories_per_day / 6, // veggies
   MED_SMALL = calories_per_day / 4,
@@ -42,3 +44,32 @@ enum CalorieValue {
   HUGE = calories_per_day, // crockpot foods?
   SUPER_HUGE = calories_per_day * 2, // crockpot foods?
 }
+
+// 源码直接用的_cooked和_dried表示状态,感觉可维护性和扩展性不足
+enum FoodState {
+  RAW = "RAW",
+  DRIED = "DRIED",
+  COOKED = "COOKED",
+}
+
+type TagKey =
+  | "fruit"
+  | "monster"
+  | "sweetener"
+  | "veggie"
+  | "meat"
+  | "fish"
+  | "magic"
+  | "decoration"
+  | "fat"
+  | "diary"
+  | "inedible";
+
+type Tags = {
+  [key in TagKey]?: number;
+};
+
+type FoodKeys = "1";
+
+export { HealingValue, SanityValue, HungerValue };
+export type { FoodType };
