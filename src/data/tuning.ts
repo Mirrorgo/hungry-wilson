@@ -46,6 +46,7 @@ enum HungerValue {
 }
 
 // 源码直接用的_cooked和_dried表示状态,感觉可维护性和扩展性不足
+// 发现游戏内容的复杂性后,感觉只能这么处理😂
 enum FoodState {
   RAW = "RAW",
   DRIED = "DRIED",
